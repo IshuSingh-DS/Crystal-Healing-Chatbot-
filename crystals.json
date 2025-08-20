@@ -1,0 +1,77 @@
+{
+  "Root": {
+    "keywords": [
+      "worried", "scared", "not safe", "uneasy", "unstable", "money problems", 
+      "stressed out", "feeling stuck", "can’t relax", "feeling shaky", "not grounded"
+    ],
+    "crystals": [
+      "Red Jasper", "Black Tourmaline", "Hematite", "Smoky Quartz", "Bloodstone", 
+      "Garnet", "Obsidian", "Jet", "Pyrite"
+    ]
+  },
+  "Sacral": {
+    "keywords": [
+      "guilty", "ashamed", "can’t express feelings", "blocked creativity", 
+      "trouble with relationships", "no passion", "feeling jealous", "can’t enjoy things", 
+      "lonely in love", "feeling needy", "not feeling playful"
+    ],
+    "crystals": [
+      "Carnelian", "Moonstone", "Orange Calcite", "Tiger's Eye", "Sunstone", 
+      "Amber", "Coral", "Peach Aventurine", "Fire Opal"
+    ]
+  },
+  "Solar Plexus": {
+    "keywords": [
+      "no confidence", "feeling weak", "doubting myself", "can’t get motivated", 
+      "feeling powerless", "angry", "need control", "afraid of failing", "feeling stuck", 
+      "hard time deciding", "perfectionism"
+    ],
+    "crystals": [
+      "Citrine", "Tiger's Eye", "Yellow Jasper", "Pyrite", "Amber", 
+      "Topaz", "Golden Calcite", "Sunstone", "Zircon"
+    ]
+  },
+  "Heart": {
+    "keywords": [
+      "heartbroken", "feeling lonely", "can’t forgive", "missing someone", 
+      "feeling sad", "hard to trust", "closed off", "afraid to love", "feeling unloved", 
+      "grieving", "feeling hurt"
+    ],
+    "crystals": [
+      "Rose Quartz", "Green Aventurine", "Rhodochrosite", "Malachite", "Chrysoprase", 
+      "Amazonite", "Emerald", "Pink Tourmaline", "Jade"
+    ]
+  },
+  "Throat": {
+    "keywords": [
+      "can’t say what I feel", "hard to speak up", "not being heard", "afraid to talk", 
+      "can’t express myself", "feeling shy", "hard to explain", "holding back", 
+      "feeling misunderstood"
+    ],
+    "crystals": [
+      "Lapis Lazuli", "Blue Lace Agate", "Aquamarine", "Sodalite", "Turquoise", 
+      "Celestite", "Chrysocolla", "Angelite", "Kyanite"
+    ]
+  },
+  "Third Eye": {
+    "keywords": [
+      "confused", "can’t focus", "not sure what to do", "hard to see clearly", 
+      "feeling lost", "doubting my gut", "weird dreams", "brain fog", "headaches"
+    ],
+    "crystals": [
+      "Amethyst", "Labradorite", "Fluorite", "Sapphire", "Azurite", 
+      "Lepidolite", "Charoite", "Iolite", "Sugilite"
+    ]
+  },
+  "Crown": {
+    "keywords": [
+      "feeling lost", "no purpose", "spiritually confused", "can’t find meaning", 
+      "feeling disconnected", "lonely inside", "empty", "looking for answers", 
+      "not sure what’s real"
+    ],
+    "crystals": [
+      "Clear Quartz", "Selenite", "Amethyst", "Diamond", "Howlite", 
+      "Celestite", "Chrysoberyl", "Danburite", "Phenacite"
+    ]
+  }
+}

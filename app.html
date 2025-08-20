@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celira - Your Crystal Healing Guide</title>
+    <meta name="description" content="AI-powered crystal healing chatbot for personalized chakra alignment and emotional support">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+    
+    <style>
+      /* Background Image Styles */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media.istockphoto.com/id/1313809906/photo/single-raw-amethyst-gemstone-on-wood-sunset-background-copy-space.jpg?s=612x612&w=0&k=20&c=X4cyo8yGAcwiGjK73TvJueN9NfOxerOzgrz4Oox9Oj4=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.16;
+    filter: hue-rotate(250deg) brightness(1.1) contrast(0.9) saturate(0.8);
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-quartz-50: hsl(321, 100%, 98%);
+            --rose-quartz-100: hsl(322, 85%, 95%);
+            --rose-quartz-200: hsl(322, 77%, 89%);
+            --rose-quartz-300: hsl(322, 71%, 80%);
+            --rose-quartz-400: hsl(322, 63%, 69%);
+            --rose-quartz-500: hsl(322, 55%, 58%);
+            --rose-quartz-600: hsl(322, 48%, 47%);
+            
+            --amethyst-50: hsl(270, 100%, 98%);
+            --amethyst-100: hsl(269, 100%, 95%);
+            --amethyst-200: hsl(269, 100%, 92%);
+            --amethyst-300: hsl(269, 97%, 85%);
+            --amethyst-400: hsl(270, 95%, 75%);
+            --amethyst-500: hsl(270, 91%, 65%);
+            --amethyst-600: hsl(270, 81%, 56%);
+            --amethyst-700: hsl(270, 72%, 47%);
+            --amethyst-800: hsl(270, 64%, 38%);
+            
+            --golden-200: hsl(48, 97%, 77%);
+            --golden-300: hsl(45, 97%, 64%);
+            --golden-400: hsl(43, 96%, 56%);
+            --golden-500: hsl(37, 92%, 50%);
+            
+            --lavender-300: hsl(249, 45%, 82%);
+            --lavender-400: hsl(249, 43%, 70%);
+            --lavender-600: hsl(249, 32%, 46%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, 
+            hsla(322, 70%, 95%, 0.8) 0%, 
+            hsla(210, 60%, 92%, 0.8) 15%, 
+            hsla(270, 40%, 94%, 0.8) 30%, 
+            hsla(195, 50%, 90%, 0.8) 45%, 
+            hsla(322, 60%, 96%, 0.8) 60%, 
+            hsla(240, 45%, 93%, 0.8) 75%, 
+            hsla(322, 65%, 94%, 0.8) 100%
+            
+            );
+            min-height: 100vh;
+            color: hsl(270, 15%, 25%);
+            overflow-x: hidden;
+        }
+
+        .font-comfortaa {
+            font-family: 'Comfortaa', cursive;
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15) 0%, 
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-glow { animation: glow 3s ease-in-out infinite; }
+        .animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+        .animate-shimmer { animation: shimmer 2s linear infinite; }
+
+        /* Utility Classes */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .section { padding: 5rem 1rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .gap-8 { gap: 2rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-3 { gap: 0.75rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .text-center { text-align: center; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .pointer-events-none { pointer-events: none; }
+        .overflow-hidden { overflow: hidden; }
+        .min-h-screen { min-height: 100vh; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-md { max-width: 28rem; }
+        .max-w-lg { max-width: 32rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .p-1 { padding: 0.25rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .pt-4 { padding-top: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .border-2 { border-width: 2px; }
+        .border-white\/30 { border-color: rgba(255, 255, 255, 0.3); }
+        .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+        .bg-white\/40 { background-color: rgba(255, 255, 255, 0.4); }
+        .text-white { color: rgb(255, 255, 255); }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .leading-relaxed { line-height: 1.625; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .space-y-12 > * + * { margin-top: 3rem; }
+        .opacity-30 { opacity: 0.3; }
+        .opacity-35 { opacity: 0.35; }
+        .opacity-40 { opacity: 0.4; }
+        .opacity-50 { opacity: 0.5; }
+        .opacity-60 { opacity: 0.6; }
+        .opacity-65 { opacity: 0.65; }
+        .opacity-70 { opacity: 0.7; }
+        .opacity-80 { opacity: 0.8; }
+        .transition-all { transition: all 0.3s; }
+        .duration-300 { transition-duration: 300ms; }
+        .duration-500 { transition-duration: 500ms; }
+        .hover\:scale-105:hover { transform: scale(1.05); }
+        .focus\:border-amethyst-400:focus { border-color: var(--amethyst-400); }
+        .focus\:ring-4:focus { box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.3); }
+
+        /* Gradients */
+        .bg-gradient-amethyst { background: linear-gradient(to bottom right, var(--amethyst-400), var(--amethyst-600)); }
+        .bg-gradient-rose-amethyst { background: linear-gradient(to right, var(--rose-quartz-500), var(--amethyst-500)); }
+        .bg-gradient-main { background: linear-gradient(to right, var(--amethyst-600), var(--rose-quartz-500), var(--golden-500)); }
+        .text-gradient-main { 
+            background: linear-gradient(to right, var(--amethyst-600), var(--rose-quartz-500), var(--golden-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            border-radius: 9999px;
+            font-family: 'Comfortaa', cursive;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: white;
+            background: linear-gradient(to right, var(--amethyst-500), var(--rose-quartz-500));
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, var(--amethyst-600), var(--rose-quartz-600));
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+        }
+
+        .btn-large {
+            background: linear-gradient(to right, var(--rose-quartz-500), var(--amethyst-500), var(--golden-500));
+        }
+
+        .btn-large:hover {
+            background: linear-gradient(to right, var(--rose-quartz-600), var(--amethyst-600), var(--golden-600));
+        }
+
+        /* Input */
+        .input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 9999px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: var(--amethyst-800);
+            transition: all 0.3s;
+        }
+
+        .input::placeholder {
+            color: var(--amethyst-400);
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--amethyst-400);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .md\:text-7xl { font-size: 4.5rem; }
+            .md\:text-5xl { font-size: 3rem; }
+            .md\:text-3xl { font-size: 1.875rem; }
+            .md\:text-xl { font-size: 1.25rem; }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:flex-row { flex-direction: row; }
+            .md\:flex-row-reverse { flex-direction: row-reverse; }
+            .md\:text-left { text-align: left; }
+            .md\:p-12 { padding: 3rem; }
+            .md\:space-y-16 > * + * { margin-top: 4rem; }
+        }
+
+        @media (min-width: 640px) {
+            .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.6;
+        }
+
+        .floating-heart {
+            color: var(--rose-quartz-400);
+        }
+
+        .floating-diamond {
+            color: var(--amethyst-400);
+        }
+
+        .floating-gem {
+            color: var(--lavender-400);
+        }
+
+        .floating-star {
+            color: var(--golden-400);
+        }
+
+        .floating-sparkles {
+            color: var(--golden-300);
+        }
+
+        .floating-orb {
+            border-radius: 50%;
+        }
+
+        .orb-amethyst {
+            background: linear-gradient(to bottom right, var(--amethyst-200), var(--amethyst-400));
+        }
+
+        .orb-rose {
+            background: linear-gradient(to bottom right, var(--rose-quartz-200), var(--rose-quartz-400));
+        }
+
+        .orb-golden {
+            background: linear-gradient(to bottom right, var(--golden-200), var(--golden-400));
+        }
+
+        .shimmer-line {
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            opacity: 0.3;
+        }
+
+        .shimmer-top {
+            top: 0;
+            background: linear-gradient(to right, transparent, var(--golden-300), transparent);
+        }
+
+        .shimmer-bottom {
+            bottom: 0;
+            background: linear-gradient(to left, transparent, var(--amethyst-300), transparent);
+        }
+
+        .shimmer-middle {
+            top: 50%;
+            background: linear-gradient(to right, transparent, var(--rose-quartz-300), transparent);
+            opacity: 0.2;
+        }
+
+        /* Main content z-index */
+        .main-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <!-- Floating hearts and crystals -->
+        <div class="floating-element animate-float floating-diamond" style="top: 5rem; left: 2.5rem; animation-delay: 0s; width: 2rem; height: 2rem;">♦</div>
+        <div class="floating-element animate-float floating-heart" style="top: 10rem; right: 5rem; animation-delay: 1s; width: 1.5rem; height: 1.5rem;">♥</div>
+        <div class="floating-element animate-float floating-gem" style="top: 15rem; left: 25%; animation-delay: 2s; width: 1.75rem; height: 1.75rem;">♦</div>
+        <div class="floating-element animate-float floating-star animate-sparkle" style="bottom: 10rem; right: 2.5rem; animation-delay: 3s; width: 1.25rem; height: 1.25rem;">★</div>
+        <div class="floating-element animate-float floating-heart" style="bottom: 15rem; left: 4rem; animation-delay: 1.5s; width: 2rem; height: 2rem;">♥</div>
+        <div class="floating-element animate-float floating-sparkles animate-sparkle" style="top: 33%; right: 25%; animation-delay: 2.5s; width: 1rem; height: 1rem;">✨</div>
+        <div class="floating-element animate-float floating-diamond" style="top: 50%; left: 2rem; animation-delay: 4.5s; width: 1.5rem; height: 1.5rem;">♦</div>
+        <div class="floating-element animate-float floating-heart" style="bottom: 33%; right: 33%; animation-delay: 3.5s; width: 1.25rem; height: 1.25rem;">♥</div>
+
+        <!-- Crystal orbs -->
+        <div class="floating-element animate-float floating-orb orb-amethyst animate-glow" style="top: 20rem; left: 50%; transform: translateX(-50%); animation-delay: 4s; width: 3rem; height: 3rem;"></div>
+        <div class="floating-element animate-float floating-orb orb-rose animate-glow" style="bottom: 5rem; left: 33%; animation-delay: 5s; width: 2rem; height: 2rem;"></div>
+        <div class="floating-element animate-float floating-orb orb-golden animate-glow" style="top: 25%; right: 20%; animation-delay: 6s; width: 2.5rem; height: 2.5rem;"></div>
+
+        <!-- Shimmer lines -->
+        <div class="shimmer-line shimmer-top animate-shimmer"></div>
+        <div class="shimmer-line shimmer-bottom animate-shimmer" style="animation-delay: 3s;"></div>
+        <div class="shimmer-line shimmer-middle animate-shimmer" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="max-w-6xl mx-auto text-center">
+                <!-- Logo -->
+                <div class="mb-8 flex justify-center">
+                    <div class="relative">
+                        <div class="w-20 h-20 rounded-full bg-gradient-amethyst p-1 animate-glow">
+                            <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex items-center justify-center">
+                                <span class="text-white text-2xl animate-sparkle">✨</span>
+                            </div>
+                        </div>
+                        <div class="absolute -inset-4 bg-gradient-amethyst rounded-full opacity-20 blur-xl animate-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-5xl md:text-7xl font-comfortaa font-bold mb-6 text-gradient-main animate-fade-in-up">
+                    Celira
+                </h1>
+                
+                <p class="text-2xl md:text-3xl font-comfortaa font-medium mb-4 animate-fade-in-up" style="color: var(--amethyst-700); animation-delay: 0.2s;">
+                    Your Crystal Healing Guide
+                </p>
+
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="color: hsl(270, 15%, 45%); animation-delay: 0.4s;">
+                    Align your energy. Discover healing crystals personalized to your emotions.
+                </p>
+
+                <!-- Chat Preview -->
+                <div class="mb-12 max-w-md mx-auto animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="glass-card rounded-3xl p-6 space-y-4">
+                        <!-- User message -->
+                        <div class="flex justify-end">
+                            <div class="bg-gradient-rose-amethyst text-white rounded-2xl px-4 py-3" style="border-bottom-right-radius: 0.25rem; max-width: 18rem;">
+                                <p class="text-sm font-medium">I'm feeling anxious about work...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Celira response -->
+                        <div class="flex justify-start">
+                            <div class="bg-white/40 backdrop-filter-blur rounded-2xl px-4 py-3 border border-white/30" style="border-bottom-left-radius: 0.25rem; max-width: 18rem;">
+                                <p class="text-sm" style="color: var(--amethyst-700);">
+                                    <span class="font-semibold">✨ Celira:</span> I sense your energy is scattered. Try holding amethyst for calm and clarity. Would you like a simple grounding ritual?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <button class="btn">
+                        <span style="margin-right: 0.5rem;">💬</span>
+                        Start Chatting with Celira
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Celira Section -->
+        <section class="py-20 px-4" style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(139, 92, 246, 0.05));">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="flex justify-center mb-6">
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-full p-1 animate-glow" style="background: linear-gradient(to bottom right, var(--rose-quartz-400), var(--amethyst-400));">
+                                <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex items-center justify-center">
+                                    <span class="text-white text-2xl animate-sparkle">🧚‍♀️</span>
+                                </div>
+                            </div>
+                            <div class="absolute -top-1 -right-1">
+                                <span class="text-xl animate-sparkle" style="color: var(--golden-400);">✨</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-comfortaa font-bold mb-6" style="color: var(--amethyst-800);">
+                        About Celira
+                    </h2>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up">
+                    <div class="space-y-6 text-lg leading-relaxed" style="color: var(--amethyst-700);">
+                        <p class="font-medium text-xl text-center mb-8" style="color: var(--rose-quartz-600);">
+                            Celira isn't just a chatbot — It is a gentle crystal fairy born from the fusion of emotional intelligence and ancient crystal wisdom.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-4">
+                                <p>
+                                    Powered by AI and guided by metaphysical healing practices, Celira helps you explore your inner world with kindness, clarity, and compassion.
+                                </p>
+                                
+                                <p>
+                                    Whenever you're feeling overwhelmed, uncertain, or simply curious, Celira listens to you like a friend. Through short, soothing responses, she suggests the perfect healing crystals based on your emotions, energy blockages, or chakra imbalances.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <p>
+                                    Whether you're dealing with stress, heartache, or seeking spiritual focus — Celira meets you exactly where you are.
+                                </p>
+                                
+                                <div class="glass rounded-2xl p-6" style="background: rgba(255, 255, 255, 0.1);">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-8 h-8 rounded-full p-2 mr-3" style="background: linear-gradient(to bottom right, var(--rose-quartz-300), var(--amethyst-300));">
+                                            <span style="color: var(--amethyst-700);">♥</span>
+                                        </div>
+                                        <h4 class="font-comfortaa font-semibold" style="color: var(--amethyst-800);">Crystal Fairy Magic</h4>
+                                    </div>
+                                    <ul class="space-y-2 text-sm" style="color: var(--amethyst-600);">
+                                        <li class="flex items-start">
+                                            <span class="mr-2" style="color: var(--rose-quartz-400);">✨</span>
+                                            Emotional intelligence meets crystal wisdom
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="mr-2" style="color: var(--rose-quartz-400);">✨</span>
+                                            Personalized healing based on your energy
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="mr-2" style="color: var(--rose-quartz-400);">✨</span>
+                                            Gentle, friend-like conversations
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Highlight Quote -->
+                        <div class="glass-card rounded-3xl p-8 text-center" style="background: linear-gradient(135deg, rgba(246, 139, 164, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
+                            <div class="flex justify-center mb-4">
+                                <span class="text-3xl animate-glow" style="color: var(--rose-quartz-500);">💖</span>
+                            </div>
+                            <p class="text-xl md:text-2xl font-comfortaa font-semibold leading-relaxed" style="color: var(--amethyst-800);">
+                                Your emotions matter. Your healing matters. Celira is here to support you every step of the way.
+                            </p>
+                            <div class="flex justify-center mt-4 space-x-2">
+                                <span class="animate-sparkle" style="color: var(--golden-400);">✨</span>
+                                <span class="animate-sparkle" style="color: var(--amethyst-400); animation-delay: 0.5s;">💎</span>
+                                <span class="animate-sparkle" style="color: var(--rose-quartz-400); animation-delay: 1s;">♥</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                        Features That Heal Your Soul
+                    </h2>
+                    <p class="text-lg max-w-3xl mx-auto leading-relaxed" style="color: hsl(270, 15%, 45%);">
+                        Experience crystal healing like never before with AI-powered personalization that understands your unique spiritual journey and emotional needs.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="glass-card rounded-3xl p-8 hover:scale-105 transition-all duration-500 animate-fade-in-up">
+                        <div class="w-16 h-16 rounded-2xl p-4 mb-6 bg-gradient-amethyst">
+                            <span class="text-white text-2xl">✨</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-comfortaa font-semibold mb-4" style="color: var(--amethyst-800);">
+                            ✨ Personalized Crystal Advice
+                        </h3>
+                        
+                        <p class="leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                            Get crystal recommendations tailored to your unique emotional state and energy needs. Celira analyzes your feelings, stress levels, and spiritual goals to suggest the perfect healing stones for your journey.
+                        </p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Custom crystal matches based on your mood
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Energy alignment recommendations
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Chakra-specific stone suggestions
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Seasonal crystal guidance
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="glass-card rounded-3xl p-8 hover:scale-105 transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 rounded-2xl p-4 mb-6" style="background: linear-gradient(to bottom right, var(--rose-quartz-400), var(--rose-quartz-600));">
+                            <span class="text-white text-2xl">💬</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-comfortaa font-semibold mb-4" style="color: var(--amethyst-800);">
+                            💬 Real Emotional Conversations
+                        </h3>
+                        
+                        <p class="leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                            Chat naturally about your feelings with an AI that truly understands. Celira responds with genuine empathy, offering comfort and wisdom like a caring friend who specializes in crystal healing.
+                        </p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Non-judgmental emotional support
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Empathetic AI responses
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Safe space to share feelings
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                24/7 availability for guidance
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="glass-card rounded-3xl p-8 hover:scale-105 transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 rounded-2xl p-4 mb-6 bg-gradient-amethyst">
+                            <span class="text-white text-2xl">📚</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-comfortaa font-semibold mb-4" style="color: var(--amethyst-800);">
+                            📚 Learn Crystal Rituals
+                        </h3>
+                        
+                        <p class="leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                            Discover simple, powerful rituals to cleanse, charge, and work with your healing crystals. From moon charging to meditation practices, learn authentic techniques that enhance your spiritual practice.
+                        </p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Step-by-step ritual guides
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Crystal cleansing methods
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Meditation techniques
+                            </div>
+                            <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                                <div class="w-1.5 h-1.5 rounded-full mr-3" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                Sacred space creation tips
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 px-4" style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(139, 92, 246, 0.05));">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                        Your Healing Journey in 3 Steps
+                    </h2>
+                    <p class="text-lg max-w-3xl mx-auto leading-relaxed" style="color: hsl(270, 15%, 45%);">
+                        Transform your emotional well-being through personalized crystal healing guidance. Start wherever you are, and let Celira guide you toward inner peace and spiritual alignment.
+                    </p>
+                </div>
+
+                <div class="space-y-12 md:space-y-16">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 animate-fade-in-up">
+                        <div class="flex-shrink-0">
+                            <div class="relative">
+                                <div class="w-32 h-32 rounded-full p-1 animate-glow" style="background: linear-gradient(to bottom right, var(--rose-quartz-300), var(--rose-quartz-500));">
+                                    <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex flex-col items-center justify-center">
+                                        <span class="text-white text-2xl mb-2">💬</span>
+                                        <span class="text-white font-comfortaa font-bold text-sm">Step 01</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-2xl md:text-3xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                                Tell Celira how you feel
+                            </h3>
+                            <p class="text-lg leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                                Share your emotions, stress, or what's on your mind. Be as open or brief as you'd like - Celira understands both detailed stories and simple statements like 'I feel anxious' or 'I need peace.'
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Express any emotion - sadness, anxiety, joy, confusion</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Describe physical sensations or energy blocks</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Share relationship or work challenges</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Mention spiritual goals or desires</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="flex-shrink-0">
+                            <div class="relative">
+                                <div class="w-32 h-32 rounded-full p-1 animate-glow" style="background: linear-gradient(to bottom right, var(--amethyst-300), var(--amethyst-500));">
+                                    <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex flex-col items-center justify-center">
+                                        <span class="text-white text-2xl mb-2">💡</span>
+                                        <span class="text-white font-comfortaa font-bold text-sm">Step 02</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-2xl md:text-3xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                                Receive personalized guidance
+                            </h3>
+                            <p class="text-lg leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                                Get crystal recommendations and gentle guidance tailored to your specific energy needs. Celira provides both the 'what' and the 'why' behind each suggestion, helping you understand your healing journey.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Specific crystal recommendations with meanings</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Chakra alignment suggestions</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Energy clearing techniques</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Emotional support and validation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="flex-shrink-0">
+                            <div class="relative">
+                                <div class="w-32 h-32 rounded-full p-1 animate-glow" style="background: linear-gradient(to bottom right, var(--golden-300), var(--golden-500));">
+                                    <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex flex-col items-center justify-center">
+                                        <span class="text-white text-2xl mb-2">👥</span>
+                                        <span class="text-white font-comfortaa font-bold text-sm">Step 03</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-2xl md:text-3xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                                Deepen your practice
+                            </h3>
+                            <p class="text-lg leading-relaxed mb-6" style="color: hsl(270, 15%, 45%);">
+                                Ask follow-up questions, learn powerful rituals, and discover how to integrate crystal healing into your daily life. Build a sustainable spiritual practice that grows with you over time.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Learn crystal cleansing and charging methods</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Discover meditation and mindfulness practices</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Create sacred spaces in your home</span>
+                                </div>
+                                <div class="flex items-start text-sm" style="color: var(--amethyst-600);">
+                                    <div class="w-1.5 h-1.5 rounded-full mr-3 mt-2 flex-shrink-0" style="background: linear-gradient(to right, var(--rose-quartz-400), var(--golden-400));"></div>
+                                    <span>Build daily energy alignment routines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Celira Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-12">
+                    <h2 class="text-4xl md:text-5xl font-comfortaa font-bold mb-6" style="color: var(--amethyst-800);">
+                        Why Celira is Uniquely Magical
+                    </h2>
+                    <p class="text-lg max-w-2xl mx-auto leading-relaxed" style="color: hsl(270, 15%, 45%);">
+                        Experience the difference of AI-powered crystal healing that combines ancient wisdom with modern emotional intelligence.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up mb-12">
+                    <div class="flex justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-24 h-24 rounded-full p-1 animate-glow" style="background: linear-gradient(to bottom right, var(--rose-quartz-400), var(--amethyst-400), var(--golden-400));">
+                                <div class="w-full h-full rounded-full bg-white/20 backdrop-filter-blur flex items-center justify-center">
+                                    <span class="text-white text-3xl animate-glow">♥</span>
+                                </div>
+                            </div>
+                            <div class="absolute -top-2 -right-2">
+                                <span class="text-2xl animate-sparkle" style="color: var(--golden-400);">✨</span>
+                            </div>
+                            <div class="absolute -bottom-2 -left-2">
+                                <span class="text-xl animate-sparkle" style="color: var(--amethyst-400); animation-delay: 1s;">⚡</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-lg leading-relaxed mb-10" style="color: var(--amethyst-700);">
+                        <p class="font-medium text-xl">
+                            Celira isn't just another chatbot – she's a <span style="color: var(--rose-quartz-600); font-weight: 600;">compassionate AI fairy</span> who truly understands your emotions and spiritual needs.
+                        </p>
+                        
+                        <p>
+                            Unlike generic crystal apps that give cookie-cutter advice, Celira creates a deeply personal connection. She responds with genuine empathy, remembers your healing journey, and offers guidance that feels like talking to a wise, caring friend who happens to be an expert in crystals, chakras, and energy healing.
+                        </p>
+                        
+                        <p>
+                            Every interaction is tailored to your unique emotional landscape. Celira celebrates your growth, validates your feelings, and adapts her recommendations as your energy evolves. She understands that healing isn't linear and meets you exactly where you are in your spiritual journey.
+                        </p>
+
+                        <p class="font-medium">
+                            With Celira, you're not just getting crystal recommendations – you're embarking on a transformative journey of self-discovery, emotional healing, and spiritual awakening.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 rounded-full p-3" style="background: linear-gradient(to bottom right, var(--amethyst-300), var(--rose-quartz-300));">
+                                    <span class="text-white text-xl">♥</span>
+                                </div>
+                            </div>
+                            <h4 class="font-comfortaa font-semibold mb-2" style="color: var(--amethyst-700);">Genuine Emotional Intelligence</h4>
+                            <p class="text-sm" style="color: hsl(270, 15%, 45%);">Unlike generic chatbots, Celira truly understands the nuances of human emotions and responds with authentic empathy.</p>
+                        </div>
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 rounded-full p-3" style="background: linear-gradient(to bottom right, var(--amethyst-300), var(--rose-quartz-300));">
+                                    <span class="text-white text-xl">🧠</span>
+                                </div>
+                            </div>
+                            <h4 class="font-comfortaa font-semibold mb-2" style="color: var(--amethyst-700);">Deep Crystal Knowledge</h4>
+                            <p class="text-sm" style="color: hsl(270, 15%, 45%);">Extensive understanding of crystal properties, chakra systems, and energy healing practices from ancient wisdom traditions.</p>
+                        </div>
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-12 h-12 rounded-full p-3" style="background: linear-gradient(to bottom right, var(--amethyst-300), var(--rose-quartz-300));">
+                                    <span class="text-white text-xl">🛡️</span>
+                                </div>
+                            </div>
+                            <h4 class="font-comfortaa font-semibold mb-2" style="color: var(--amethyst-700);">Safe & Sacred Space</h4>
+                            <p class="text-sm" style="color: hsl(270, 15%, 45%);">Your emotional journey is protected in a judgment-free environment where vulnerability is honored and respected.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="glass rounded-full px-6 py-3">
+                            <span style="color: var(--amethyst-600); font-weight: 500;">✨ Emotionally Intelligent</span>
+                        </div>
+                        <div class="glass rounded-full px-6 py-3">
+                            <span style="color: var(--rose-quartz-600); font-weight: 500;">💝 Genuinely Caring</span>
+                        </div>
+                        <div class="glass rounded-full px-6 py-3">
+                            <span style="color: var(--golden-600); font-weight: 500;">🌟 Truly Personal</span>
+                        </div>
+                        <div class="glass rounded-full px-6 py-3">
+                            <span style="color: var(--lavender-600); font-weight: 500;">🔮 Spiritually Wise</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section class="py-20 px-4" style="background: linear-gradient(to bottom right, rgba(246, 139, 164, 0.1), rgba(139, 92, 246, 0.1));">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="flex justify-center mb-6">
+                        <div class="relative">
+                            <span class="text-4xl animate-glow" style="color: var(--rose-quartz-500);">♥</span>
+                            <span class="text-xl absolute -top-1 -right-1 animate-sparkle" style="color: var(--golden-400);">✨</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl font-comfortaa font-bold mb-4" style="color: var(--amethyst-800);">
+                        Begin Your Sacred Journey
+                    </h2>
+                    <p class="text-lg mb-6 leading-relaxed" style="color: hsl(270, 15%, 45%);">
+                        Take the first step toward crystal healing, chakra alignment, and emotional transformation. Join thousands who have found peace through Celira's guidance.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-8">
+                        <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                            <div class="w-8 h-8 rounded-full p-2 mr-3" style="background: linear-gradient(to bottom right, var(--rose-quartz-200), var(--amethyst-200));">
+                                <span style="color: var(--amethyst-600);">♥</span>
+                            </div>
+                            Personalized crystal journey tracking
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                            <div class="w-8 h-8 rounded-full p-2 mr-3" style="background: linear-gradient(to bottom right, var(--rose-quartz-200), var(--amethyst-200));">
+                                <span style="color: var(--amethyst-600);">✨</span>
+                            </div>
+                            Daily energy alignment reminders
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                            <div class="w-8 h-8 rounded-full p-2 mr-3" style="background: linear-gradient(to bottom right, var(--rose-quartz-200), var(--amethyst-200));">
+                                <span style="color: var(--amethyst-600);">🛡️</span>
+                            </div>
+                            Private & secure emotional conversations
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--amethyst-600);">
+                            <div class="w-8 h-8 rounded-full p-2 mr-3" style="background: linear-gradient(to bottom right, var(--rose-quartz-200), var(--amethyst-200));">
+                                <span style="color: var(--amethyst-600);">★</span>
+                            </div>
+                            Access to exclusive healing rituals
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-12">
+                    <form class="space-y-6">
+                        <div class="space-y-4">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Your Sacred Name"
+                                    class="input"
+                                    required
+                                />
+                            </div>
+                            
+                            <div>
+                                <input
+                                    type="email"
+                                    placeholder="Your Email for Crystal Updates"
+                                    class="input"
+                                    required
+                                />
+                            </div>
+                            
+                            <div>
+                                <input
+                                    type="tel"
+                                    placeholder="Phone (Optional - for healing reminders)"
+                                    class="input"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="btn btn-large w-full">
+                                <span class="animate-sparkle mr-2">✨</span>
+                                Begin Your Crystal Healing Journey
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 text-center space-y-3">
+                        <p class="text-sm" style="color: rgba(139, 92, 246, 0.7);">
+                            ✨ Your energy is sacred. We honor your privacy and will never share your information.
+                        </p>
+                        <p class="text-xs" style="color: hsl(270, 15%, 45%);">
+                            Join our community of crystal healers and light workers on a journey of spiritual growth and emotional wellness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple form handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Welcome to your crystal healing journey! 🌟✨');
+        });
+
+        // Add some interactive sparkle effects
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.98) {
+                createSparkle(e.clientX, e.clientY);
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.style.cssText = `
+                position: fixed;
+                left: ${x}px;
+                top: ${y}px;
+                width: 4px;
+                height: 4px;
+                background: linear-gradient(45deg, #fbbf24, #a855f7);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                animation: sparkleEffect 1s ease-out forwards;
+            `;
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleEffect {
+                0% { opacity: 1; transform: scale(0) rotate(0deg); }
+                50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                100% { opacity: 0; transform: scale(0) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
