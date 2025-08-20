@@ -1,0 +1,245 @@
+/* Custom Mystical Crystal Healing Styles */
+/* Note: We're using Tailwind via CDN, so no @tailwind directives needed */
+
+:root {
+  /* Mystical Color Palette */
+  --mystical-purple: #8b5cf6;
+  --mystical-pink: #ec4899;
+  --mystical-blue: #06b6d4;
+  --mystical-lavender: #a855f7;
+  --mystical-rose: #f472b6;
+  --mystical-aqua: #22d3ee;
+
+  /* Chakra Colors */
+  --chakra-root: #ef4444;
+  --chakra-sacral: #f97316;
+  --chakra-solar: #facc15;
+  --chakra-heart: #22c55e;
+  --chakra-throat: #3b82f6;
+  --chakra-third-eye: #6366f1;
+  --chakra-crown: #9333ea;
+
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: rgba(31, 38, 135, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #374151;
+  overflow-x: hidden;
+}
+
+/* Mystical Button Styles */
+.btn-mystical {
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--mystical-purple), var(--mystical-pink));
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.btn-mystical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+/* Chakra-themed Elements */
+.chakra-element {
+  border-radius: 8px;
+  padding: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+}
+
+/* Floating Animation Utilities */
+.float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.twinkle-delayed {
+  animation: twinkle-delayed 4s ease-in-out infinite;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Text Gradient Utilities */
+.text-mystical {
+  background: linear-gradient(135deg, var(--mystical-purple), var(--mystical-pink), var(--mystical-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Chakra Glow Utilities */
+.glow-root {
+  box-shadow: 0 0 20px var(--chakra-root);
+}
+.glow-sacral {
+  box-shadow: 0 0 20px var(--chakra-sacral);
+}
+.glow-solar {
+  box-shadow: 0 0 20px var(--chakra-solar);
+}
+.glow-heart {
+  box-shadow: 0 0 20px var(--chakra-heart);
+}
+.glow-throat {
+  box-shadow: 0 0 20px var(--chakra-throat);
+}
+.glow-third-eye {
+  box-shadow: 0 0 20px var(--chakra-third-eye);
+}
+.glow-crown {
+  box-shadow: 0 0 20px var(--chakra-crown);
+}
+
+/* Keyframe Animations */
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-180deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes twinkle-delayed {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes mystical-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer-mystical {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .btn-mystical {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg: rgba(0, 0, 0, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .glass {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #000;
+  }
+
+  .btn-mystical {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .float-gentle,
+  .float-delayed,
+  .twinkle,
+  .twinkle-delayed {
+    animation: none;
+  }
+
+  .btn-mystical:hover {
+    transform: none;
+  }
+}
